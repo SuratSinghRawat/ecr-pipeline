@@ -1,0 +1,32 @@
+pipeline{
+    agent none
+    environment{
+        AWS_ACCOUNT_ID="211125636900"
+        #AWS_DEFAULT_REGION="ap-south-1"
+        AWS_REPO_NAME="react-spring-mongo/reactapp"
+        IMAGE_TAG="1"
+        REPOSITORY_URL="211125636900.dkr.ecr.ap-south-1.amazonaws.com/react-spring-mongo/reactapp"
+    }
+    stages{
+        stage("loggin in ECR Repo")
+        {
+          agent any
+          steps{
+                script{
+                    sh "aws ecr get-login-password --region $(AWS_DEFAULT_REGION)| docker login --username AWS --password-stdin 211125636900.dkr.ecr.ap-south-1.amazonaws.com"
+                }
+          }
+
+        }
+
+        stage("git clone")
+        {
+            agent any
+            steps{
+                git branch: 'main', url: 'https://github.com/SuratSinghRawat/ecr-pipeline.git'                
+
+            }
+        }
+    }
+
+}
