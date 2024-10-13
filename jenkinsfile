@@ -2,7 +2,7 @@ pipeline{
     agent none
     environment{
         AWS_ACCOUNT_ID="211125636900"
-        //AWS_DEFAULT_REGION="ap-south-1"
+        AWS_DEFAULT_REGION="ap-south-1"
         AWS_REPO_NAME="react-spring-mongo/reactapp"
         IMAGE_TAG="1"
         REPOSITORY_URL="211125636900.dkr.ecr.ap-south-1.amazonaws.com/react-spring-mongo/reactapp"
