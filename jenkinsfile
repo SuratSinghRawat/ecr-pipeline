@@ -10,7 +10,7 @@ pipeline{
     stages{
         stage("loggin in ECR Repo")
         {
-          agent any
+          agent{ label 'jenkins-agent-sonar'}
           steps{
                 script{
                     sh "aws ecr get-login-password --region $(AWS_DEFAULT_REGION)| docker login --username AWS --password-stdin 211125636900.dkr.ecr.ap-south-1.amazonaws.com"
@@ -21,7 +21,7 @@ pipeline{
 
         stage("git clone")
         {
-            agent any
+            agent{ label 'jenkins-agent-sonar'}
             steps{
                 git branch: 'main', url: 'https://github.com/SuratSinghRawat/ecr-pipeline.git'                
 
