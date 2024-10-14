@@ -32,7 +32,7 @@ pipeline{
             steps{
                 sh '''
                 sudo docker tag reactapp:1 211125636900.dkr.ecr.ap-south-1.amazonaws.com/react-spring-mongo/reactapp:1
-                docker push 211125636900.dkr.ecr.ap-south-1.amazonaws.com/react-spring-mongo/reactapp:1
+                sudo docker push 211125636900.dkr.ecr.ap-south-1.amazonaws.com/react-spring-mongo/reactapp:1
                 '''
             }
         }
