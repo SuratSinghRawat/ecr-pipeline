@@ -18,12 +18,19 @@ pipeline{
           }
 
         }
-
         stage("git clone")
         {
             agent{ label 'jenkins-agent-sonar'}
             steps{
                 git branch: 'main', url: 'https://github.com/SuratSinghRawat/ecr-pipeline.git'                
+
+            }
+        }
+        stage("bulid image")
+        {
+            agent{ label 'jenkins-agent-sonar'}
+            steps{
+                sh "docker tag reactapp:1 211125636900.dkr.ecr.ap-south-1.amazonaws.com/react-spring-mongo/reactapp:1                 
 
             }
         }
