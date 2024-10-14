@@ -30,7 +30,7 @@ pipeline{
         {
             agent{ label 'jenkins-agent-sonar'}
             steps{
-                sh "docker tag reactapp:1 211125636900.dkr.ecr.ap-south-1.amazonaws.com/react-spring-mongo/reactapp:1                 
+                sh "docker tag reactapp:1 211125636900.dkr.ecr.ap-south-1.amazonaws.com/react-spring-mongo/reactapp:1"                 
 
             }
         }
