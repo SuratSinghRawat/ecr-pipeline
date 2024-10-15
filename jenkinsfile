@@ -1,4 +1,7 @@
 pipeline{
+    options {
+        skipDefaultCheckout true
+    }
     agent none
     environment{
         AWS_ACCOUNT_ID="211125636900"
