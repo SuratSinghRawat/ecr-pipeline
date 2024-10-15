@@ -50,7 +50,7 @@ pipeline{
                     docker pull ${REPOSITORY_URL}:${IMAGE_TAG}
                     docker tag  ${REPOSITORY_URL}:${IMAGE_TAG} ${IMAGE_NAME}:${IMAGE_TAG}
                     docker rmi ${REPOSITORY_URL}:${IMAGE_TAG}
-                    docker run -d --name myreactapp -p 8088:8088 ${IMAGE_NAME}:${IMAGE_TAG}
+                    docker run -d --name myreac-app -p 8088:8088 ${IMAGE_NAME}:${IMAGE_TAG}
                     '''
                     
                     
