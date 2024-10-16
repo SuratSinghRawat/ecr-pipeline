@@ -52,8 +52,13 @@ pipeline{
                     docker rmi ${REPOSITORY_URL}:${IMAGE_TAG}
                     docker run -d --name myreac-app -p 8088:8088 ${IMAGE_NAME}:${IMAGE_TAG}
                     '''
-                    
-                    
+                }
+            }
+        }
+        stage("Helm deploy"){
+            steps{
+                script{
+                    sh "helm upgrade myreactapp --install /var/helmchart/reactapp"
                 }
             }
         }
